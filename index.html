@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LosRedó</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="container">
+  <div class="scoreboard">
+    <span class="score-item green">✅ <span id="score-correct">0</span></span>
+    <span class="score-item red">❌ <span id="score-incorrect">0</span></span>
+  </div>
+
+  <h1>👑 Triviador Ricotero 👑</h1>
+  <p>Escucha y adivina.</p>
+
+  <audio id="audio-player" preload="auto"></audio>
+
+  <div class="game-controls">
+    <button id="btn-main" class="btn btn-primary" onclick="startNewRound()">
+      ▶️ Jugar
+    </button>
+    
+    <div id="status-text">Dale play para comenzar...</div>
+    
+    <div id="help-controls" class="hidden">
+      <button class="btn btn-small btn-blue" onclick="replayAudio()">
+        🔄 Repetir (5s)
+      </button>
+      <button class="btn btn-small btn-orange" onclick="playExtended()">
+        👂 Pista (10s)
+      </button>
+    </div>
+
+    <div id="answer-section" class="hidden">
+      <button id="btn-reveal" class="btn btn-secondary" onclick="revealAnswer()">
+        👁️ Ver Respuesta
+      </button>
+      
+      <div id="final-result" class="hidden">
+        <h2 id="song-title">???</h2>
+        <p style="margin-bottom:10px; color:#aaa;">¿Adivinaste?</p>
+        
+        <div class="vote-buttons">
+          <button class="btn btn-vote btn-green" onclick="vote(true)">
+            ✅ ¡La sabía!
+          </button>
+          <button class="btn btn-vote btn-red" onclick="vote(false)">
+            ❌ No la saqué
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Versión Clásica 🎸
+</footer>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
